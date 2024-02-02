@@ -15,18 +15,18 @@
 /* Footer default sizes, desktop */
 
 #footer .sponsorsInLevel img.title {
-  max-width: 335px;
-  max-height: 335px;
+  max-width: 245px;
+  max-height: 245px;
 }
 
 #footer .sponsorsInLevel img.diamante {
-  max-width: 305px;
-  max-height: 305px;
+  max-width: 245px;
+  max-height: 245px;
 }
 
 #footer .sponsorsInLevel img.ouro {
-  max-width: 275px;
-  max-height: 275px;
+  max-width: 245px;
+  max-height: 245px;
 }
 
 #footer .sponsorsInLevel img.prata {
@@ -57,18 +57,18 @@
 @media screen and (max-width: 736px) {
   /* Footer default sizes, mobile */
   #footer .sponsorsInLevel img.title {
-    max-width: 335px;
-    max-height: 335px;
+    max-width: 245px;
+    max-height: 245px;
   }
 
   #footer .sponsorsInLevel img.diamante {
-    max-width: 305px;
-    max-height: 305px;
+    max-width: 245px;
+    max-height: 245px;
   }
 
   #footer .sponsorsInLevel img.ouro {
-    max-width: 275px;
-    max-height: 275px;
+    max-width: 245px;
+    max-height: 245px;
   }
 
   #footer .sponsorsInLevel img.prata {
