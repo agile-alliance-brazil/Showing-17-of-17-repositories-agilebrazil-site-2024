@@ -4,17 +4,32 @@
       <h2 style="max-width: 750px; margin: auto;">GRANDES PARCEIROS QUE FIZERAM A AGILE BRAZIL 2023 ACONTECER</h2>
       <p>Conheça as empresas que apoiam a Agile Brazil</p>
     </header>
-
+<div style="
+display: flex;
+flex-wrap: wrap;
+">
     {% for cota in site.cotas %}
+      {% if cota == 'title' %}
+        <div class="sessao-potrocinio-full">
+      {% elsif cota == 'comunidade apoio' %}
+        <div class="sessao-potrocinio-full">
+      {% else %}
+        <div class="sessao-potrocinio">
+      {% endif %} 
+<!--
+
+              border: rgba(27,127,204,.8) solid 1px;
+              border-radius: 20px;
+-->
       <div class="cota">
         {% if cota == 'comunidade apoio' %}
-          <h3 class="patrocinadoras" style="text-align: center;">comunidades apoio</h3>
+          <h3 class="patrocinadoras" style="text-align: center; padding: 2em 2em;">comunidades apoio</h3>
         {% else %}
-          <h3 class="patrocinadoras" style="text-align: center;">Patrocínio {{cota}}</h3>
+          <h3 class="patrocinadoras" style="text-align: center; padding: 2em 2em;">Patrocínio {{cota}}</h3>
         {% endif %} 
       </div>
       <div class="sponsorsInLevel {{cota}}">
-        <div class="empresas">
+        <div class="empresas" style="padding: 10px;">
           {% assign levelSponsors = site.data.sponsors | where: "level", cota %}
           {% for sponsor in levelSponsors %}         
             {% if sponsor.url %}
@@ -27,5 +42,7 @@
           {% endfor %}
         </div>
       </div>
+    </div>
     {% endfor %}
+  </div>
   </section>
