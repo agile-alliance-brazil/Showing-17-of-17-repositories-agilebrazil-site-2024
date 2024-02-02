@@ -312,7 +312,8 @@ table.response-version-screen, table.full-screen .local-palestra {
 }
 
 .sessao-potrocinio {
-	max-width: 33%;
+	max-width: 33.333%;
+	width: 33.333%;
 	display: block;
 }
 
