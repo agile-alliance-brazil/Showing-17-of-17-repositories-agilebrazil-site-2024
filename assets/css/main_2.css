@@ -4664,7 +4664,7 @@ input, select, textarea {
 
 			#banner {
 				height: auto;
-				min-height: 25rem;
+				min-height: 18rem;
 			}
 
 				#banner > .inner {
