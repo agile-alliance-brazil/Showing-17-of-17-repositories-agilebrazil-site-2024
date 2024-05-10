@@ -1,11 +1,12 @@
-sponsors: true
-keynotes: true
+sponsors: false
+keynotes: false
 keynotes_shortly: false
 program: false
 faq: true
 covid: false
 diversity_and_inclusion_coupon: false
 home_submissions: true
-initial_batch_call: false
+initial_batch_call: true
 community_forms: false
 event_schedule: false
+sos_rs: false

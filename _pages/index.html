@@ -20,6 +20,7 @@ permalink: /
   </div>
 </section>
 
+{% if site.data.toggles.sos_rs %}
 <section class="wrapper home-submissions style1">
   <div class="inner">
     <header class="heading">
@@ -38,6 +39,7 @@ permalink: /
     </div>
   </div>
 </section>
+{% endif %}
 
 <!-- Callouts -->
 {% if site.data.toggles.home_submissions %}
@@ -85,7 +87,22 @@ permalink: /
 {% endif %}
 
 
-<section class="wrapper style1">
+<!-- Callouts -->
+{% if site.data.toggles.initial_batch_call %}
+  <section class="wrapper style1">
+    <div class="inner">
+      <header class="heading">
+        <h2 class="regular-call-text">{% t texts.initial_batch_call %}</h2>
+        <p>{% t texts.secure_your_spot %}</p>
+      </header>
+      <ul class="actions special">
+        <li><a href="{{ site.sistemas.inscricoes }}" target="_blank" class="button primary">{% t actions.want_my_ticket %}</a></li>
+      </ul>
+    </div>
+  </section>
+{% endif %}
+
+<section class="wrapper ">
   <div class="inner">
     <div class="double-division">
       <div class="feature teaser-agilebrazil-2022">
@@ -109,20 +126,6 @@ permalink: /
 </section>
 
 
-<!-- Callouts -->
-{% if site.data.toggles.initial_batch_call %}
-  <section class="wrapper">
-    <div class="inner">
-      <header class="heading">
-        <h2 class="regular-call-text">{% t texts.initial_batch_call %}</h2>
-        <p>{% t texts.secure_your_spot %}</p>
-      </header>
-      <ul class="actions special">
-        <li><a href="{{ site.sistemas.inscricoes }}" target="_blank" class="button primary">{% t actions.want_my_ticket %}</a></li>
-      </ul>
-    </div>
-  </section>
-{% endif %}
 
 
 
