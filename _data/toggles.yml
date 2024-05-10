@@ -10,3 +10,4 @@ initial_batch_call: true
 community_forms: false
 event_schedule: false
 sos_rs: false
+reminder_last_year: false
