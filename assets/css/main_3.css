@@ -4881,9 +4881,10 @@ input, select, textarea {
 	
 	#footer .apoio:not(.comunidade),
 	#footer .social {
+		border-left: var(--ab-divisores) solid 1px;
 		padding-left: 2em;
 		min-width: 320px;
-		width: 50%;
+		max-width: 320px;
 	}
 
 	#footer .apoio:not(.comunidade) {

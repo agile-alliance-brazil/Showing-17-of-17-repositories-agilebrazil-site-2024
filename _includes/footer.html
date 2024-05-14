@@ -5,25 +5,40 @@
   {% endif %}
 
   <section class="sobre">
-    <!-- <div class="localizacao">
+    <div class="localizacao">
       <h3>Local</h3>
 
-      <iframe src="https://www.google.com/maps/embed/v1/place?q=centro+de+convenções+rebouças+são+paulo&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" height="230" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Centro de Convenções Rebouças"></iframe>
+      <iframe src="https://www.google.com/maps/embed/v1/place?q=Centro+de+Conven%C3%A7%C3%B5es+AM+Malls+Sergipe&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" height="230" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa do Centro de Convenções AM Malls Sergipe"></iframe>
 
       <address>
-        <p><strong>Fitpark Centro de Convenções Rebouças</strong></p>
+        <p><strong>Centro de Convenções AM Malls Sergipe</strong></p>
         <p>
-          Av. Rebouças, 600<br />
-          Pinheiros, São Paulo/SP
+          Av. Pres. Tancredo Neves, 4444 <br/>
+          Inácio Barbosa, Aracaju – SE
         </p>
-        <p><strong>Como chegar:</strong></p>
+        <!-- <p><strong>Como chegar:</strong></p>
         <p>
           Transporte Público (recomendado)  <br />
           Metrô - Estações Clinicas (3 min a pé) e Oscar Freire (9 min a pé)<br />
           Carro/Moto - Estacionamento disponível no local (FitPark)
-        </p>
+        </p>-->
       </address>
-    </div> -->
+    </div>
+
+    <div class="apoio">
+      <h3>Apoio</h3>
+
+      <ul class="supporters">
+        {% for supporter in site.data.supporters %}
+        <li>
+          <a href="{{supporter.url}}" target="_blank">
+            <img src="{{supporter.logo | prepend: site.baseurl_root}}" alt="{{supporter.name}}">
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    
     <div class="social">
       <h3>Siga a Agile Brazil</h3>
       <ul class="icons">
@@ -43,20 +58,6 @@
         <a href="mailto:{{email}}">{{email}}</a>
       {% endfor %}
       <a  target="_blank" href="https://api.whatsapp.com/send/?phone=5511916443750&text&type=phone_number&app_absent=0">whatsapp (+55 11 91644-3750)</a>
-    </div>
-
-    <div class="apoio">
-      <h3>Apoio</h3>
-
-      <ul class="supporters">
-        {% for supporter in site.data.supporters %}
-        <li>
-          <a href="{{supporter.url}}" target="_blank">
-            <img src="{{supporter.logo | prepend: site.baseurl_root}}" alt="{{supporter.name}}">
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
     </div>
 
   </section>
