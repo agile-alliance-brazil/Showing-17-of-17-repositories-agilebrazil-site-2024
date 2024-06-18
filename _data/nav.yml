@@ -35,8 +35,8 @@
 
 - name: nav.diversity_and_inclusion
   namespace: diversity_and_inclusion
-  production: false
-  visible: false
+  production: true
+  visible: true
 
 - name: nav.faq
   namespace: faq
