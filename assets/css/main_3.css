@@ -172,6 +172,7 @@ ul.icons.hastag {
 #program-intregration-v2 table td {
 	padding: 2px;
 	height: 1px;
+	padding-bottom: 5px !important;
 }
 
 .local-palestra, .trilha {
