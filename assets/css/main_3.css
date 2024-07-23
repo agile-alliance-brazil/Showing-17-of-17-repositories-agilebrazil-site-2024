@@ -163,12 +163,12 @@ ul.icons.hastag {
 #program-intregration-v2 table thead {
 	border-bottom: none !important;
 }
-
+/*
 #identificacao-900 div, #identificacao-930 div, #identificacao-1020 div,
 #identificacao-1800 div, #identificacao-1710 div, #identificacao-1640 div, #identificacao-1830 div {
 	text-transform: uppercase !important;
 }
-
+*/
 #program-intregration-v2 table td {
 	padding: 2px;
 	height: 1px;
@@ -4320,6 +4320,10 @@ input, select, textarea {
 	text-align: center;
 	min-height: 70vh;
 	width: 100%;
+}
+
+#banner.aracaju {
+	background-image: url("../images/banner-aracaju.png") !important;
 }
 
 @media screen and (max-width: 980px) {
