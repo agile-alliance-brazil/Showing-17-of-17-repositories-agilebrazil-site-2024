@@ -319,12 +319,12 @@
 				</div>`,
 			'identificacao-1700-6': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Vago</p>
+					<p class="title">Em definição</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1700-7': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Vago</p>
+					<p class="title">Em definição</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1740': '<div class="activity full-space card-program">Encerramento</div>',
