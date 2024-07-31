@@ -60,7 +60,7 @@ cotas:
 #  - bronze
   - comunidade
 #  - diversidade
-#  - comunidade apoio
+  - comunidade apoio
 
 permalink: :slug
 theme: jekyll-theme-minimal

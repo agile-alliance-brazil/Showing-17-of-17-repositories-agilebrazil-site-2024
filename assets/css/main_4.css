@@ -207,6 +207,15 @@ ul.icons.hastag {
     border-radius: 10px;
     color: #000 !important;
 }
+#program-intregration-v2 table div.card-program p.hashtag-trilha{
+	margin: 0px;
+	background-color: #00000025;
+	color: #fff !important;
+	border-radius: 10px 10px 0px 0px !important;
+	font-size: 16px !important;
+	margin-bottom: 10px !important;
+	border-bottom: solid 1px;
+}
 
 #program-intregration-v2 table div.card-program p{
     color: #FFFFFF !important;

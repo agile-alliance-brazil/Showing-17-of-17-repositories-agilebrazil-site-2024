@@ -10,36 +10,43 @@
 			'identificacao-900': '<div class="activity full-space card-program">Welcome Coffee</div>',
 			'identificacao-930': '<div class="activity full-space keynote card-program"><div><p class="keynote-program">Abertura & Keynote - Andressa Chiara</p></div></div>',
 			'identificacao-1100-1': `<div class="activity cliente card-program">
+					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
 					<div class="local-palestra">Arena 1</div>
 					<p class="title">Estratégia de Produto em Fintechs: Alinhando Agilidade com Inovação e Regulação</p>
 					<p class="autor">João Victor Alves</p>
 				</div>`,
 			'identificacao-1100-2': `<div class="activity lideranca card-program">
+					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Arena 2</div>
 					<p class="title">Navegando com KMM e STATIK:  Como conquistamos novos mercados através do serviço End-to-End de desenvolvimento de bionegócios globais</p>
 					<p class="autor">Jady Fernanda Alves de Oliveira & Daniel Rocha</p>
 				</div>`,
 			'identificacao-1100-3': `<div class="activity futuro card-program">
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">A fragilidade da acessibilidade nas equipes ágeis de desenvolvimento de produtos digitais: como as lideranças podem ajudar a habilitar um futuro realmente inclusivo</p> 
 					<p class="autor">Diego Conceição & Jeniffer Deus</p>
 				</div>`,
 			'identificacao-1100-4': `<div class="activity cliente card-program">
+					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
 					<div class="local-palestra">Atalaia</div>
 					<p class="title">PM Wheel e a criação de Avaliação Técnica: Case e ferramenta para usar HOJE</p>
 					<p class="autor">Thiago Noronha</p>
 				</div>`,
 			'identificacao-1100-5': `<div class="activity cliente workspace card-program">
+					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
 					<div class="local-palestra">Abaís</div>
 					<p class="title">Desbloqueando Insights dos Nossos Clientes com F4P (Fit for Purpose)</p>
 					<p class="autor">Alcides Vieira</p>
 				</div>`,
 			'identificacao-1100-6': `<div class="activity lideranca workspace card-program">
-			<div class="local-palestra">Terra Caída</div>
+					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
+					<div class="local-palestra">Terra Caída</div>
 					<p class="title">Desbloqueie Seu Potencial de Facilitação!</p>
 					<p class="autor">Mariana Carvalho & Carolina Souza Bezerra</p>
 				</div>`,
 			'identificacao-1100-7': `<div class="activity futuro workspace card-program">
+				<p class="hashtag-trilha">Futuro da Agilidade</p>
 				<div class="local-palestra">Pirambu</div>
 				<p class="title">Dê Propósito: Integrando Práticas Ágeis e Sustentáveis</p>
 				<p class="autor">Marcus Godoy  & Renata Luciria Monteiro</p>
