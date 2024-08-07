@@ -512,7 +512,7 @@
 			'identificacao-1510-3': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Arena 3</div>
-					<p class="title">Um relato do uso da gamificação para engajar as pessoas em ambientes organizacionais tradicionais: Seus ônus e bonus</p> 
+					<p class="title">Um relato do uso da gamificação para engajar as pessoas em ambientes organizacionais tradicionais: A experiência do TCE-RN</p> 
 					<p class="autor">Marcia Soares Marques</p>
 				</div>`,
 			'identificacao-1510-4': `<div class="activity futuro card-program">
