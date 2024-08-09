@@ -471,7 +471,7 @@
 			'identificacao-1430-3': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Arena 3</div>
-					<p class="title">Evolução ÁGIL em mais de duas décadas: que bom, que pena e que tal?</p> 
+					<p class="title">Estratégias para Lidar com a Mudança Organizacional: Promovendo Inovação e Adaptaçã</p> 
 					<p class="autor">Karoline Kröker Corrêa</p>
 				</div>`,
 			'identificacao-1430-4': `<div class="activity cliente card-program">
