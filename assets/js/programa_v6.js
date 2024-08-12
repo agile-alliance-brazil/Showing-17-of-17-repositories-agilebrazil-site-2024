@@ -69,11 +69,11 @@
 					<p class="title">Passos Essenciais e Ferramentas para o Sucesso de Modernização de Aplicações</p>
 					<p class="autor">Camilla Crispim</p>
 				</div>`,
-			'identificacao-1200-4': `<div class="activity metrica card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+			'identificacao-1200-4': `<div class="activity futuro card-program">
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Atalaia</div>
-					<p class="title">Machine Learning no RH: Como aplicar na prática</p>
-					<p class="autor">Mário Lúcio Roque de Oliveira Porto</p>
+					<p class="title">Agilidade com 'Accountability'</p>
+					<p class="autor">Henrique Gonçalves & Paulo Cassin</p>
 				</div>`,
 			'identificacao-1430-1': `<div class="activity metrica card-program">
 					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
@@ -330,11 +330,11 @@
 					<p class="title">Governança Ágil para IA Ética: Políticas e Práticas para Futuros Sustentáveis</p> 
 					<p class="autor">Vinicius carvalho</p>
 				</div>`,
-			'identificacao-1610-4': `<div class="activity futuro card-program">
-					<p class="hashtag-trilha">Futuro da Agilidade</p>
+			'identificacao-1610-4': `<div class="activity lideranca card-program">
+					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Atalaia</div>
-					<p class="title">Agilidade com 'Accountability'</p>
-					<p class="autor">Henrique Gonçalves & Paulo Cassin</p>
+					<p class="title">Implantando Gestão de Portfólio conectado a processos de ciclo orçamentário - Aplicação em áreas de infraestrutura da Globo</p>
+					<p class="autor">Amanda Cristina Soares Gomes & Daniel Vicentin Gonçalves</p>
 				</div>`,
 			'identificacao-1610-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
@@ -445,11 +445,11 @@
 					<p class="title">Por que meu time demora tanto para entregar valor?</p>
 					<p class="autor">Jiba Waghetti</p>
 				</div>`,
-			'identificacao-1200-4': `<div class="activity futuro card-program">
-					<p class="hashtag-trilha">Futuro da Agilidade</p>
+			'identificacao-1200-4': `<div class="activity metrica card-program">
+					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
 					<div class="local-palestra">Atalaia</div>
-					<p class="title">Ágil Além do Código: Implementando Metodologia Ágil em uma Área Inesperada!</p>
-					<p class="autor">Heloise Alves Morales</p>
+					<p class="title">Machine Learning no RH: Como aplicar na prática</p>
+					<p class="autor">Mário Lúcio Roque de Oliveira Porto</p>
 				</div>`,
 			'identificacao-1200-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
@@ -551,11 +551,11 @@
 						<p class="title">Transformação Ágil: Reinventando a Forma de Trabalhar na Petrobras</p>
 						<p class="autor">Raquel Rodrigues Silva</p>
 					</div>`,
-				'identificacao-1630-2': `<div class="activity lideranca card-program">
-						<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
+				'identificacao-1630-2': `<div class="activity futuro card-program">
+						<p class="hashtag-trilha">Futuro da Agilidade</p>
 						<div class="local-palestra">Arena 2</div>
-						<p class="title">Implantando Gestão de Portfólio conectado a processos de ciclo orçamentário - Aplicação em áreas de infraestrutura da Globo</p>
-						<p class="autor">Amanda Cristina Soares Gomes & Daniel Vicentin Gonçalves</p>
+						<p class="title">Ágil Além do Código: Implementando Metodologia Ágil em uma Área Inesperada!</p>
+						<p class="autor">Heloise Alves Morales</p>
 					</div>`,
 				'identificacao-1630-3': `<div class="activity lideranca card-program">
 						<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
