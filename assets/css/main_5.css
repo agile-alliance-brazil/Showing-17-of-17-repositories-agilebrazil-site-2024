@@ -81,6 +81,10 @@ section, summary, time, mark, audio, video {
     line-height: 2.375rem !important;
 }
 
+.Software.Zen {
+	max-width: 200px;
+}
+
 /*
 -----------------------------------------------------------------------
 ---------------------------------- popup ------------------------------
