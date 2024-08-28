@@ -55,9 +55,9 @@ baseurl: "/2024" # the subpath of your site, e.g. /blog
 cotas:
 #  - title
 #  - diamante
-#  - ouro
+  - ouro
 #  - prata
-#  - bronze
+  - bronze
   - comunidade
 #  - diversidade
   - comunidade apoio
