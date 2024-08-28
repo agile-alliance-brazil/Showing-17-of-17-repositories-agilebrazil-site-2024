@@ -8,10 +8,10 @@
 #  url: https://www.thoughtworks.com/pt-br
 #  level: diamante
 
-#- name: Businessmap
-#  logo: /assets/images/sponsors/sponsor-businessmap.png
-#  url: https://businessmap.io/pt
-#  level: ouro
+- name: Businessmap
+  logo: /assets/images/sponsors/sponsor-businessmap.png
+  url: https://businessmap.io/pt
+  level: ouro
 
 #- name: DB
 #  logo: /assets/images/sponsors/sponsor-logo-bd.png
@@ -23,10 +23,10 @@
 #  url: https://www.suzano.com.br
 #  level: bronze
 
-#- name: Bain & company
-#  logo: /assets/images/sponsors/sponsor-bain.png
-#  url: https://www.bain.com/pt-br/
-#  level: bronze
+- name: Bain & company
+  logo: /assets/images/sponsors/sponsor-bain.png
+  url: https://www.bain.com/pt-br/
+  level: bronze
 
 #- name: Wildtech
 #  logo: /assets/images/sponsors/sponsor-wildtech.png
