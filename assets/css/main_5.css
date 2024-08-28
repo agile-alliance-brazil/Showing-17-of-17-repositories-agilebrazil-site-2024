@@ -82,7 +82,7 @@ section, summary, time, mark, audio, video {
 }
 
 .Software.Zen {
-	max-width: 200px;
+	max-width: 200px !important;
 }
 
 /*
