@@ -1,8 +1,3 @@
-/*
-	Venue by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
 
 (function($) {
 	window.dataProgram = {
@@ -595,60 +590,62 @@
 			$(".full-screen #"+index).html(program);
 		};
 	}
-	
-	/*
-	separar paineis de produto
-	e de opén
-	*/
 
-	if ($("#program-30").length > 0 && window.initProgram == 0) {
+	if ($("#program-30").length > 0 && window.initProgram == 0 && !window.location.href.indexOf('programa-m')) {
 		window.program(30);
 	}
-/*
-	
-	$.ajax({
-		type: 'GET',
-		url: "https://agileminas.com.br/chamada_agile_brazil.php",
-		crossDomain:true,
-		success: function(result){
-			console.log('Successo', result);
-			window.program = JSON.parse(result);
-			var programacao = ' <ul class="workshops">';
 
-			  window.program.data.forEach( function (item) {
-				item.sessions.forEach( function (session) {
-					programacao = programacao + `<li class="session" id="session`+session.id_session+`">
-						<div class="row classifications">
-						<p class="track"><strong>Trilha:</strong>`+session.title_schedule+`</p>
-						<p class="level"><strong>Nível:</strong> `+session.venue+`</p>
-						<p class="type"><strong>Tipo:</strong> `+session.venue+`</p>
-						</div>
-						<h3>`+session.title+`</h3>
-						<p>
-						`;
-					var speakers = [];
-					session.speakers.forEach(function (speaker) {
-						speakers.push(speaker.name);
-					});
-					programacao = programacao + speakers.join(' & ') + `</p>
-						<details>
-						<summary>Saiba mais</summary>
-						`+session.description+`
-					
-						<hr>
-						<strong>Pré-requisitos: </strong> `+session.tags+`
-						</details>
-					</li>`
+	if ($("#program-30").length > 0 && window.location.href.indexOf('programa-m')) {
+		$.ajax({
+			type: 'GET',
+			url: "https://docs.google.com/spreadsheets/d/1cHE2jOlZXy--lDFdfHFVbof7fTi8tEpLf3Iil31A_MA/gviz/tq?tqx=out:json",
+			crossDomain:true,
+			success: function(responseText){
+				console.log('Successo', responseText.slice(47, -2));
+				responseJSON = JSON.parse(
+					responseText.slice(47, -2)
+				);
+				console.log(responseJSON);
+				var rowsArray = [];
+				responseJSON.table.rows.forEach(function(row){
+					var rowArray = [];
+					row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
+					rowsArray.push(rowArray);
 				});
-			  });
-			programacao += '</ul>';
-			$("#program-intregration").html(programacao);
-		},
-		error: function(result){
-			console.log('Error', result);
-			$("#program-intregration").html('Programação indisponivel no momento');
-		}
-	});
-*/
+				console.log(rowsArray);
+
+				window.dataProgram = {};
+				rowsArray.forEach(function(row){
+					switch(row[6]) {
+						case "Coffee":
+							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
+							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'">'+row[3]+'</div>';
+							break;
+						case "keynote":
+							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
+							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'"><div><p class="keynote-program">'+row[3]+'</p></div></div>';
+							break;
+						case "palestra":
+							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
+							window.dataProgram[row[0]][row[1]] = `<div class="activity lideranca card-program">
+								<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
+								<div class="local-palestra">Arena 2</div>
+								<p class="title">Navegando com KMM e STATIK:  Como conquistamos novos mercados através do serviço End-to-End de desenvolvimento de bionegócios globais</p>
+								<p class="autor">Jady Fernanda Alves de Oliveira & Daniel Rocha</p>
+							</div>`;
+							break;
+					}
+
+				});
+				console.log(window.dataProgram);
+				window.program(30);
+				
+			},
+			error: function(result){
+				console.log('Error', result);
+				$("#program-intregration").html('Programação indisponivel no momento');
+			}
+		});
+	}
 
 })(jQuery);
