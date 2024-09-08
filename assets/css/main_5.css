@@ -97,6 +97,10 @@ section, summary, time, mark, audio, video {
 	color: #020202 !important;
 }
 
+.text-clicavel:hover {
+	cursor: pointer;
+    text-decoration: underline;
+}
 /*
 ------------------------------------------------------------------------
 -------------------------------- Palestrantes --------------------------

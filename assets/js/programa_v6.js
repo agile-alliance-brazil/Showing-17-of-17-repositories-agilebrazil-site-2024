@@ -682,7 +682,7 @@
 								<p class="hashtag-trilha"> ` + row[4] + ` </p>
 								<div class="local-palestra"> ` + row[5] + ` </div>
 								<p class="title"> ` + row[8] + ` </p>
-								<p class="autor" onclick="popupProgram('` + row[0] + `', '` + row[1] + `')"> ` + row[7] + ` </p>
+								<p class="autor text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `')"> ` + row[7] + ` </p>
 							</div>`;
 							break;
 					}
