@@ -584,18 +584,60 @@
 
 		$("#estrutura-"+day).css('display', 'block');
 		$("#program-"+day).css('background-color', '#147332');
+		var variables = [];
 		for (var index in dataProgram[day]) {
 			var program = dataProgram[day][index];
+			variables += `
+			`+day+` `+index;
 			$(".response-version-screen #"+index).html(program);
 			$(".full-screen #"+index).html(program);
 		};
+		console.log(variables);
 	}
 
-	if ($("#program-30").length > 0 && window.initProgram == 0 && !window.location.href.indexOf('programa-m')) {
+	window.popupProgram = function (day, id) {
+		console.log(window.dataProgramPopup[day][id], $(".backgroud-modal"));
+		var dados = window.dataProgramPopup[day][id];
+		
+		$("#conteudo-popup-programacao").html(`
+			<div class="profile">
+				<div  style="display: none" class="image-keynotes">
+				<img class="image-speaker" src="` + dados.foto + `" alt="` + dados.autor + `" />
+				</div>
+				<div class="image-keynotes" style="width: 125px !important;
+				height: 125px !important;
+				border-radius: 50% !important;
+				margin: auto;
+				background-image: url(` + dados.foto + `);
+				background-size: cover;" alt="` + dados.autor + `">
+				</div>
+				<p><b>` + dados.autor + `</b></p>
+				<p>` + dados.miniBiografia + `</p>
+				<ul class="icons">
+					<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+					<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+					<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
+					<li><a href="{{ speaker.spotify }}" class="icon brands fa-spotify" target="_blank"><span class="label">Podcast</span></a></li> -->
+				</ul>
+			</div>
+		`);
+		$(".backgroud-modal").show();
+		$(".backgroud-modal").animate({opacity:1},750);
+	}
+
+	setInterval(function () {
+		$(".backgroud-modal").on( "click", function() {
+			$(".backgroud-modal").animate({opacity:0}, 300, function() {
+				$(".backgroud-modal").hide();
+			});
+		} );
+	}, 2000);
+
+	if ($("#program-30").length > 0 && window.initProgram == 0 && window.location.href.indexOf('programa-m') < 0) {
 		window.program(30);
 	}
 
-	if ($("#program-30").length > 0 && window.location.href.indexOf('programa-m')) {
+	if ($("#program-30").length > 0 && window.location.href.indexOf('programa-m') > 0) {
 		$.ajax({
 			type: 'GET',
 			url: "https://docs.google.com/spreadsheets/d/1cHE2jOlZXy--lDFdfHFVbof7fTi8tEpLf3Iil31A_MA/gviz/tq?tqx=out:json",
@@ -615,23 +657,32 @@
 				console.log(rowsArray);
 
 				window.dataProgram = {};
+				window.dataProgramPopup = {};
 				rowsArray.forEach(function(row){
+					if (window.dataProgram[row[0]] === undefined) {
+						window.dataProgram[row[0]] = [];
+						window.dataProgramPopup[row[0]] = [];
+					} 
 					switch(row[6]) {
-						case "Coffee":
-							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
+						case "Coffee": 
 							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'">'+row[3]+'</div>';
 							break;
 						case "keynote":
-							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
 							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'"><div><p class="keynote-program">'+row[3]+'</p></div></div>';
 							break;
 						case "palestra":
-							if (window.dataProgram[row[0]] === undefined) window.dataProgram[row[0]] = []; 
-							window.dataProgram[row[0]][row[1]] = `<div class="activity lideranca card-program">
-								<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
-								<div class="local-palestra">Arena 2</div>
-								<p class="title">Navegando com KMM e STATIK:  Como conquistamos novos mercados através do serviço End-to-End de desenvolvimento de bionegócios globais</p>
-								<p class="autor">Jady Fernanda Alves de Oliveira & Daniel Rocha</p>
+							console.log(window.dataProgramPopup, window.dataProgram);
+							window.dataProgramPopup[row[0]][row[1]] = {
+								autor: row[7],
+								miniBiografia: row[10],
+								foto: row[9],
+								linkedin: row[11]
+							};
+							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + row[2] + ` card-program">
+								<p class="hashtag-trilha"> ` + row[4] + ` </p>
+								<div class="local-palestra"> ` + row[5] + ` </div>
+								<p class="title"> ` + row[8] + ` </p>
+								<p class="autor" onclick="popupProgram('` + row[0] + `', '` + row[1] + `')"> ` + row[7] + ` </p>
 							</div>`;
 							break;
 					}
