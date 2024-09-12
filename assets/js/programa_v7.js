@@ -149,13 +149,13 @@
 					<p class="autor">Alan Voigt</p>
 				</div>`,
 			'identificacao-1610-3': `<div class="activity futuro card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">Agile Sapiens: a jornada de evolução do papel desde seu surgimento até os dias atuais e o que esperar do futuro dos agilistas</p> 
 					<p class="autor">Cintia Guberovic</p>
 				</div>`,
 			'identificacao-1610-4': `<div class="activity metrica card-program">
-					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
+					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
 					<div class="local-palestra">Atalaia</div>
 					<p class="title">Potencializando a Visualização, Análise de Dados e Inteligência de Negócios com IA Generativa</p>
 					<p class="autor">Maria Vitória Silva Magalhães & Ranieri de Messias Santos</p>
@@ -435,7 +435,7 @@
 					<p class="autor">Dayane Knupp & Derek Leite</p>
 				</div>`,
 			'identificacao-1200-3': `<div class="activity raizes card-program">
-					<p class="hashtag-trilha">Futuro da Agilidade</p>
+					<p class="hashtag-trilha">Raízes da Agilidade</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">Por que meu time demora tanto para entregar valor?</p>
 					<p class="autor">Jiba Waghetti</p>
@@ -499,7 +499,7 @@
 					<p class="autor">Elton Carvalho</p>
 				</div>`,
 			'identificacao-1510-2': `<div class="activity futuro card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Arena 2</div>
 					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
 					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
