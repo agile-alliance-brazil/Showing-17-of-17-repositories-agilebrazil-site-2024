@@ -148,17 +148,17 @@
 					<p class="title">A mágica das métricas: Como elas podem direcionar a qualidade do produto?</p>
 					<p class="autor">Alan Voigt</p>
 				</div>`,
-			'identificacao-1610-3': `<div class="activity metrica card-program">
+			'identificacao-1610-3': `<div class="activity futuro card-program">
 					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">Agile Sapiens: a jornada de evolução do papel desde seu surgimento até os dias atuais e o que esperar do futuro dos agilistas</p> 
 					<p class="autor">Cintia Guberovic</p>
 				</div>`,
-			'identificacao-1610-4': `<div class="activity cliente card-program">
+			'identificacao-1610-4': `<div class="activity metrica card-program">
 					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
 					<div class="local-palestra">Atalaia</div>
-					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
-					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
+					<p class="title">Potencializando a Visualização, Análise de Dados e Inteligência de Negócios com IA Generativa</p>
+					<p class="autor">Maria Vitória Silva Magalhães & Ranieri de Messias Santos</p>
 				</div>`,
 			'identificacao-1640': '<div class="activity full-space card-program">Coffee Break</div>',
 			'identificacao-1700': '<div class="activity full-space keynote card-program"><div><p class="keynote-program">Keynote Fora da Caixa - Bianca Oliveira</p></div></div>',
@@ -193,7 +193,7 @@
 				</div>`,
 			'identificacao-1100-5': `<div class="activity default card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Lançamento: Evento Ágil - Lu Moraes</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1100-6': `<div class="activity raizes workspace card-program">
@@ -407,7 +407,7 @@
 				</div>`,
 			'identificacao-1100-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Comunidades - Mulheres de Produto</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1100-6': `<div class="activity metrica workspace card-program">
@@ -448,7 +448,7 @@
 				</div>`,
 			'identificacao-1200-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Comunidades - Agilidade Preta</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1430-1': `<div class="activity raizes card-program">
@@ -498,11 +498,11 @@
 					<p class="title">Como transformei uma necessidade pessoal em um negócio?</p>
 					<p class="autor">Elton Carvalho</p>
 				</div>`,
-			'identificacao-1510-2': `<div class="activity metrica card-program">
+			'identificacao-1510-2': `<div class="activity futuro card-program">
 					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
 					<div class="local-palestra">Arena 2</div>
-					<p class="title">Potencializando a Visualização, Análise de Dados e Inteligência de Negócios com IA Generativa</p>
-					<p class="autor">Maria Vitória Silva Magalhães & Ranieri de Messias Santos</p>
+					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
+					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
 				</div>`,
 			'identificacao-1510-3': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
