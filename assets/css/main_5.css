@@ -90,7 +90,17 @@ section, summary, time, mark, audio, video {
 ---------------------------------- popup ------------------------------
 -----------------------------------------------------------------------
 */
+#conteudo-popup-programacao {
+	background-color: #ddd;
+	border-radius: 20px !important;
+	padding-top: 10px;
+	color: #020202 !important;
+}
 
+.text-clicavel:hover {
+	cursor: pointer;
+    text-decoration: underline;
+}
 /*
 ------------------------------------------------------------------------
 -------------------------------- Palestrantes --------------------------

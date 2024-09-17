@@ -1,8 +1,3 @@
-/*
-	Venue by Pixelarity
-	pixelarity.com | hello@pixelarity.com
-	License: pixelarity.com/license
-*/
 
 (function($) {
 	window.dataProgram = {
@@ -153,17 +148,17 @@
 					<p class="title">A mágica das métricas: Como elas podem direcionar a qualidade do produto?</p>
 					<p class="autor">Alan Voigt</p>
 				</div>`,
-			'identificacao-1610-3': `<div class="activity metrica card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+			'identificacao-1610-3': `<div class="activity futuro card-program">
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">Agile Sapiens: a jornada de evolução do papel desde seu surgimento até os dias atuais e o que esperar do futuro dos agilistas</p> 
 					<p class="autor">Cintia Guberovic</p>
 				</div>`,
-			'identificacao-1610-4': `<div class="activity cliente card-program">
-					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
+			'identificacao-1610-4': `<div class="activity metrica card-program">
+					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
 					<div class="local-palestra">Atalaia</div>
-					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
-					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
+					<p class="title">Potencializando a Visualização, Análise de Dados e Inteligência de Negócios com IA Generativa</p>
+					<p class="autor">Maria Vitória Silva Magalhães & Ranieri de Messias Santos</p>
 				</div>`,
 			'identificacao-1640': '<div class="activity full-space card-program">Coffee Break</div>',
 			'identificacao-1700': '<div class="activity full-space keynote card-program"><div><p class="keynote-program">Keynote Fora da Caixa - Bianca Oliveira</p></div></div>',
@@ -198,7 +193,7 @@
 				</div>`,
 			'identificacao-1100-5': `<div class="activity default card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Lançamento: Evento Ágil - Lu Moraes</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1100-6': `<div class="activity raizes workspace card-program">
@@ -412,7 +407,7 @@
 				</div>`,
 			'identificacao-1100-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Comunidades - Mulheres de Produto</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1100-6': `<div class="activity metrica workspace card-program">
@@ -440,7 +435,7 @@
 					<p class="autor">Dayane Knupp & Derek Leite</p>
 				</div>`,
 			'identificacao-1200-3': `<div class="activity raizes card-program">
-					<p class="hashtag-trilha">Futuro da Agilidade</p>
+					<p class="hashtag-trilha">Raízes da Agilidade</p>
 					<div class="local-palestra">Arena 3</div>
 					<p class="title">Por que meu time demora tanto para entregar valor?</p>
 					<p class="autor">Jiba Waghetti</p>
@@ -453,7 +448,7 @@
 				</div>`,
 			'identificacao-1200-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades</p>
+					<p class="title">Comunidades - Agilidade Preta</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1430-1': `<div class="activity raizes card-program">
@@ -503,11 +498,11 @@
 					<p class="title">Como transformei uma necessidade pessoal em um negócio?</p>
 					<p class="autor">Elton Carvalho</p>
 				</div>`,
-			'identificacao-1510-2': `<div class="activity metrica card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+			'identificacao-1510-2': `<div class="activity futuro card-program">
+					<p class="hashtag-trilha">Futuro da Agilidade</p>
 					<div class="local-palestra">Arena 2</div>
-					<p class="title">Potencializando a Visualização, Análise de Dados e Inteligência de Negócios com IA Generativa</p>
-					<p class="autor">Maria Vitória Silva Magalhães & Ranieri de Messias Santos</p>
+					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
+					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
 				</div>`,
 			'identificacao-1510-3': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
@@ -589,66 +584,119 @@
 
 		$("#estrutura-"+day).css('display', 'block');
 		$("#program-"+day).css('background-color', '#147332');
+		var variables = [];
 		for (var index in dataProgram[day]) {
 			var program = dataProgram[day][index];
+			variables += `
+			`+day+` `+index;
 			$(".response-version-screen #"+index).html(program);
 			$(".full-screen #"+index).html(program);
 		};
+		console.log(variables);
 	}
-	
-	/*
-	separar paineis de produto
-	e de opén
-	*/
 
-	if ($("#program-30").length > 0 && window.initProgram == 0) {
+	window.popupProgram = function (day, id) {
+		console.log(window.dataProgramPopup[day][id], $(".backgroud-modal"));
+		var dados = window.dataProgramPopup[day][id];
+		
+		$("#conteudo-popup-programacao").html(`
+			<div class="profile">
+				<div  style="display: none" class="image-keynotes">
+				<img class="image-speaker" src="` + dados.foto + `" alt="` + dados.autor + `" />
+				</div>
+				<div class="image-keynotes" style="width: 125px !important;
+				height: 125px !important;
+				border-radius: 50% !important;
+				margin: auto;
+				background-image: url(` + dados.foto + `);
+				background-size: cover;" alt="` + dados.autor + `">
+				</div>
+				<p><b>` + dados.autor + `</b></p>
+				<p>` + dados.miniBiografia + `</p>
+				<ul class="icons">
+					<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+					<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+					<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
+					<li><a href="{{ speaker.spotify }}" class="icon brands fa-spotify" target="_blank"><span class="label">Podcast</span></a></li> -->
+				</ul>
+			</div>
+		`);
+		$(".backgroud-modal").show();
+		$(".backgroud-modal").animate({opacity:1},750);
+	}
+
+	setInterval(function () {
+		$(".backgroud-modal").on( "click", function() {
+			$(".backgroud-modal").animate({opacity:0}, 300, function() {
+				$(".backgroud-modal").hide();
+			});
+		} );
+	}, 2000);
+
+	if ($("#program-30").length > 0 && window.initProgram == 0 && window.location.href.indexOf('programa-m') < 0) {
 		window.program(30);
 	}
-/*
-	
-	$.ajax({
-		type: 'GET',
-		url: "https://agileminas.com.br/chamada_agile_brazil.php",
-		crossDomain:true,
-		success: function(result){
-			console.log('Successo', result);
-			window.program = JSON.parse(result);
-			var programacao = ' <ul class="workshops">';
 
-			  window.program.data.forEach( function (item) {
-				item.sessions.forEach( function (session) {
-					programacao = programacao + `<li class="session" id="session`+session.id_session+`">
-						<div class="row classifications">
-						<p class="track"><strong>Trilha:</strong>`+session.title_schedule+`</p>
-						<p class="level"><strong>Nível:</strong> `+session.venue+`</p>
-						<p class="type"><strong>Tipo:</strong> `+session.venue+`</p>
-						</div>
-						<h3>`+session.title+`</h3>
-						<p>
-						`;
-					var speakers = [];
-					session.speakers.forEach(function (speaker) {
-						speakers.push(speaker.name);
-					});
-					programacao = programacao + speakers.join(' & ') + `</p>
-						<details>
-						<summary>Saiba mais</summary>
-						`+session.description+`
-					
-						<hr>
-						<strong>Pré-requisitos: </strong> `+session.tags+`
-						</details>
-					</li>`
+	if ($("#program-30").length > 0 && window.location.href.indexOf('programa-m') > 0) {
+		$.ajax({
+			type: 'GET',
+			url: "https://docs.google.com/spreadsheets/d/1cHE2jOlZXy--lDFdfHFVbof7fTi8tEpLf3Iil31A_MA/gviz/tq?tqx=out:json",
+			crossDomain:true,
+			success: function(responseText){
+				console.log('Successo', responseText.slice(47, -2));
+				responseJSON = JSON.parse(
+					responseText.slice(47, -2)
+				);
+				console.log(responseJSON);
+				var rowsArray = [];
+				responseJSON.table.rows.forEach(function(row){
+					var rowArray = [];
+					row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
+					rowsArray.push(rowArray);
 				});
-			  });
-			programacao += '</ul>';
-			$("#program-intregration").html(programacao);
-		},
-		error: function(result){
-			console.log('Error', result);
-			$("#program-intregration").html('Programação indisponivel no momento');
-		}
-	});
-*/
+				console.log(rowsArray);
+
+				window.dataProgram = {};
+				window.dataProgramPopup = {};
+				rowsArray.forEach(function(row){
+					if (window.dataProgram[row[0]] === undefined) {
+						window.dataProgram[row[0]] = [];
+						window.dataProgramPopup[row[0]] = [];
+					} 
+					switch(row[6]) {
+						case "Coffee": 
+							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'">'+row[3]+'</div>';
+							break;
+						case "keynote":
+							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'"><div><p class="keynote-program">'+row[3]+'</p></div></div>';
+							break;
+						case "palestra":
+							console.log(window.dataProgramPopup, window.dataProgram);
+							window.dataProgramPopup[row[0]][row[1]] = {
+								autor: row[7],
+								miniBiografia: row[10],
+								foto: row[9],
+								linkedin: row[11]
+							};
+							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + row[2] + ` card-program">
+								<p class="hashtag-trilha"> ` + row[4] + ` </p>
+								<div class="local-palestra"> ` + row[5] + ` </div>
+								<p class="title"> ` + row[8] + ` </p>
+								<p class="autor text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `')"> ` + row[7] + ` </p>
+							</div>`;
+							break;
+					}
+
+				});
+				console.log(window.dataProgram);
+				window.program(30);
+				
+			},
+			error: function(result){
+				console.log('Error', result);
+				$("#program-intregration").html('Programação indisponivel no momento');
+			}
+		});
+	}
 
 })(jQuery);

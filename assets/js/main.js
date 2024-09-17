@@ -118,15 +118,17 @@
 				side: 'right'
 			});
 
-setInterval(function () {
-	$(".backgroud-modal").animate({opacity:1},750);
+			if(window.location.href.indexOf('programa-m') < 0) {
+				setInterval(function () {
+					$(".backgroud-modal").animate({opacity:1},750);
 
-	$(".backgroud-modal").on( "click", function() {
-		$(".backgroud-modal").animate({opacity:0}, 300, function() {
-			$(".backgroud-modal").hide();
-		});
-	} );
-}, 2000);
+					$(".backgroud-modal").on( "click", function() {
+						$(".backgroud-modal").animate({opacity:0}, 300, function() {
+							$(".backgroud-modal").hide();
+						});
+					} );
+				}, 2000);
+			}
 
 
 })(jQuery);
