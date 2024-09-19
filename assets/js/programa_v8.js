@@ -337,12 +337,12 @@
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1640': '<div class="activity full-space card-program">Coffee Break</div>',
-			'identificacao-1700-1': `<div class="activity lideranca card-program">
-					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
-					<div class="local-palestra">Arena 1</div>
-					<p class="title">Agilidade como Cultura Organizacional:  Gerando valor para a estratégia através da agilidade</p>
-					<p class="autor">Thaysa Maria de Farias Moura & Isabella Menezes Santos Rezende</p>
-				</div>`,
+			'identificacao-1700-1': `<div class="activity metrica card-program">
+			<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
+			<div class="local-palestra">Arena 2</div>
+			<p class="title">Avaliação e gestão de performance para times ágeis</p>
+			<p class="autor">Flavio Fonseca Alves</p>
+		</div>`,
 			'identificacao-1700-2': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Arena 2</div>
@@ -457,12 +457,12 @@
 					<p class="title">Vikings em 700 d.C., 8 fatos que provam que agilidade é para qualquer área do conhecimento</p>
 					<p class="autor">Aurineide Cavalcante  & Samuel Moro Bergamo Cavalcante</p>
 				</div>`,
-			'identificacao-1430-2': `<div class="activity metrica card-program">
-					<p class="hashtag-trilha">Métricas e Inteligência com Dados</p>
-					<div class="local-palestra">Arena 2</div>
-					<p class="title">Avaliação e gestão de performance para times ágeis</p>
-					<p class="autor">Flavio Fonseca Alves</p>
-				</div>`,
+			'identificacao-1430-2': `<div class="activity lideranca card-program">
+			<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
+			<div class="local-palestra">Arena 1</div>
+			<p class="title">Agilidade como Cultura Organizacional:  Gerando valor para a estratégia através da agilidade</p>
+			<p class="autor">Thaysa Maria de Farias Moura & Isabella Menezes Santos Rezende</p>
+		</div>`,
 			'identificacao-1430-3': `<div class="activity lideranca card-program">
 					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Arena 3</div>
@@ -614,7 +614,7 @@
 				<p><b>` + dados.autor + `</b></p>
 				<p>` + dados.miniBiografia + `</p>
 				<ul class="icons">
-					<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+					` +  (dados.linkedin ? `<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li> ` : '') + `
 					<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
 					<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
 					<li><a href="{{ speaker.spotify }}" class="icon brands fa-spotify" target="_blank"><span class="label">Podcast</span></a></li> -->
@@ -676,7 +676,7 @@
 								autor: row[7],
 								miniBiografia: row[10],
 								foto: row[9],
-								linkedin: row[11]
+								linkedin: row[11] ?? false
 							};
 							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + row[2] + ` card-program">
 								<p class="hashtag-trilha"> ` + row[4] + ` </p>
