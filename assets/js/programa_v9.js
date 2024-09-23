@@ -469,8 +469,8 @@
 					<p class="title">Estratégias para Lidar com a Mudança Organizacional: Promovendo Inovação e Adaptaçã</p> 
 					<p class="autor">Karoline Kröker Corrêa</p>
 				</div>`,
-			'identificacao-1430-4': `<div class="activity cliente card-program">
-					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
+			'identificacao-1430-4': `<div class="activity lideranca card-program">
+					<p class="hashtag-trilha">Liderança e Agilidade Estratégica</p>
 					<div class="local-palestra">Atalaia</div>
 					<p class="title">Como venci os desafios da liderança em um ambiente de trabalho remoto com mindset ágil e management 3.0</p>
 					<p class="autor">Paula Jordão</p>
