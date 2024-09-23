@@ -498,8 +498,8 @@
 					<p class="title">Como transformei uma necessidade pessoal em um negócio?</p>
 					<p class="autor">Elton Carvalho</p>
 				</div>`,
-			'identificacao-1510-2': `<div class="activity futuro card-program">
-					<p class="hashtag-trilha">Futuro da Agilidade</p>
+			'identificacao-1510-2': `<div class="activity cliente card-program">
+					<p class="hashtag-trilha">Produtos e Foco no Cliente</p>
 					<div class="local-palestra">Arena 2</div>
 					<p class="title">Produto e Vendas: amigos ou inimigos? Performance Desk, um processo para desenvolver, empacotar e vender produtos para alavancar receita no curto prazo</p>
 					<p class="autor">Jair Fernandez Castro & Ana Paula dos Reis Lima</p>
