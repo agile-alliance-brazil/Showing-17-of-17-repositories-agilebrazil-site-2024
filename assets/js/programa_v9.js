@@ -595,39 +595,49 @@
 		console.log(variables);
 	}
 
-	window.popupProgram = function (day, id) {
-		console.log(window.dataProgramPopup[day][id], $(".backgroud-modal"));
-		var dados = window.dataProgramPopup[day][id];
-		
-		$("#conteudo-popup-programacao").html(`
-			<div class="profile">
-				<div  style="display: none" class="image-keynotes">
-				<img class="image-speaker" src="` + dados.foto + `" alt="` + dados.autor + `" />
+	window.popupProgram = function (day, id, posicao) {
+		console.log(window.dataProgramPopup[day][id][posicao - 1], $(".backgroud-modal"));
+		var dados = window.dataProgramPopup[day][id][posicao - 1];
+		if (posicao == 1) {
+			$("#conteudo-popup-programacao").html(`
+				<div class="profile">
+					<p><b>` + dados.title + `</b></p>
+					<p>` + dados.descricao + `</p>
 				</div>
-				<div class="image-keynotes" style="width: 125px !important;
-				height: 125px !important;
-				border-radius: 50% !important;
-				margin: auto;
-				background-image: url(` + dados.foto + `);
-				background-size: cover;" alt="` + dados.autor + `">
+			`);
+
+		} else {
+			$("#conteudo-popup-programacao").html(`
+				<div class="profile">
+					<div  style="display: none" class="image-keynotes">
+					<img class="image-speaker" src="` + dados.foto + `" alt="` + dados.autor + `" />
+					</div>
+					<div class="image-keynotes" style="width: 125px !important;
+					height: 125px !important;
+					border-radius: 50% !important;
+					margin: auto;
+					background-image: url(` + dados.foto + `);
+					background-size: cover;" alt="` + dados.autor + `">
+					</div>
+					<p><b>` + dados.autor + `</b></p>
+					<p>` + dados.miniBiografia + `</p>
+					<ul class="icons">
+						` +  (dados.linkedin ? `<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li> ` : '') + `
+						<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+						<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
+						<li><a href="{{ speaker.spotify }}" class="icon brands fa-spotify" target="_blank"><span class="label">Podcast</span></a></li> -->
+					</ul>
 				</div>
-				<p><b>` + dados.autor + `</b></p>
-				<p>` + dados.miniBiografia + `</p>
-				<ul class="icons">
-					` +  (dados.linkedin ? `<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li> ` : '') + `
-					<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-					<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
-					<li><a href="{{ speaker.spotify }}" class="icon brands fa-spotify" target="_blank"><span class="label">Podcast</span></a></li> -->
-				</ul>
-			</div>
-		`);
+			`);
+
+		}
 		$(".backgroud-modal").show();
-		$(".backgroud-modal").animate({opacity:1},750);
+		$(".backgroud-modal").animate({opacity:1},50);
 	}
 
 	setInterval(function () {
 		$(".backgroud-modal").on( "click", function() {
-			$(".backgroud-modal").animate({opacity:0}, 300, function() {
+			$(".backgroud-modal").animate({opacity:0}, 50, function() {
 				$(".backgroud-modal").hide();
 			});
 		} );
@@ -654,7 +664,7 @@
 					row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
 					rowsArray.push(rowArray);
 				});
-				console.log(rowsArray);
+				console.log(rowsArray, '***********');
 
 				window.dataProgram = {};
 				window.dataProgramPopup = {};
@@ -663,32 +673,72 @@
 						window.dataProgram[row[0]] = [];
 						window.dataProgramPopup[row[0]] = [];
 					} 
-					switch(row[6]) {
+					switch(row[5]) {
 						case "Coffee": 
-							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'">'+row[3]+'</div>';
+							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
 							break;
-						case "keynote":
-							window.dataProgram[row[0]][row[1]] = '<div class="'+row[2]+'"><div><p class="keynote-program">'+row[3]+'</p></div></div>';
+						case "Keynote":
+							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space keynote card-program"><div><p class="keynote-program">'+row[2]+'</p></div></div>';
 							break;
-						case "palestra":
+						case "Palestra":
+						case "Workshop":
 							console.log(window.dataProgramPopup, window.dataProgram);
-							window.dataProgramPopup[row[0]][row[1]] = {
-								autor: row[7],
-								miniBiografia: row[10],
-								foto: row[9],
-								linkedin: row[11] ?? false
-							};
-							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + row[2] + ` card-program">
-								<p class="hashtag-trilha"> ` + row[4] + ` </p>
-								<div class="local-palestra"> ` + row[5] + ` </div>
-								<p class="title"> ` + row[8] + ` </p>
-								<p class="autor text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `')"> ` + row[7] + ` </p>
+							var classCss = '';
+							switch (row[3]) {
+								case "Produtos e Foco no Cliente" :
+									classCss = 'cliente';
+									break;
+								case "Liderança e Agilidade Estratégica" :
+									classCss = 'lideranca';
+									break;
+								case "Futuro da Agilidade" :
+									classCss = 'futuro';
+									break;
+								case "Reaízes da Agilidade" :
+									classCss = 'raizes';
+									break;
+								case "Métricas e Inteligência com Dados" :
+									classCss = 'metrica';
+									break;
+
+							}
+							window.dataProgramPopup[row[0]][row[1]] = [
+								{
+									title: row[2],
+									trilha: row[3],
+									descricao: row[6]
+								},
+								{
+									autor: row[7],
+									miniBiografia: row[9],
+									foto: row[8],
+									linkedin: row[10] ?? false
+								}
+							];
+							if (row[11]) {
+								window.dataProgramPopup[row[0]][row[1]].push(
+									{
+										autor: row[11],
+										miniBiografia: row[13],
+										foto: row[12],
+										linkedin: row[14] ?? false
+									}
+								);
+							}
+							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + classCss + ` card-program">
+								<p class="hashtag-trilha"> ` + row[3] + ` </p>
+								<div class="local-palestra"> ` + row[4] + ` </div>
+								<p class="title"> <a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </a> </p>
+								<p class="autor"> 
+									<a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[7] + ` </a>
+									` + ( row[11] ? ` & <a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[11] + ` </a>` : '' ) + `
+								</p>
 							</div>`;
 							break;
 					}
 
 				});
-				console.log(window.dataProgram);
+				console.log(window.dataProgram, '=================');
 				window.program(30);
 				
 			},
