@@ -213,7 +213,8 @@ ul.icons.hastag {
 	font-weight: bold !important;	
 }
 
-#program-intregration-v2 table div.card-program p.autor{
+#program-intregration-v2 table div.card-program p.autor,
+#program-intregration-v2 table div.card-program div.autor{
     /*color: #D9D9D9 !important;
 	font-weight: bold !important;	*/
 
@@ -221,6 +222,12 @@ ul.icons.hastag {
     border-radius: 10px;
     color: #000 !important;
 }
+
+#program-intregration-v2 table div.card-program div.autor{
+	margin: 5px;
+    padding: 5px;
+}
+
 #program-intregration-v2 table div.card-program p.hashtag-trilha{
 	margin: 0px;
 	background-color: #00000025;

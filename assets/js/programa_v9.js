@@ -728,11 +728,11 @@
 							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + classCss + ` card-program">
 								<p class="hashtag-trilha"> ` + row[3] + ` </p>
 								<div class="local-palestra"> ` + row[4] + ` </div>
-								<p class="title"> <a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </a> </p>
-								<p class="autor"> 
-									<a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[7] + ` </a>
-									` + ( row[11] ? ` & <a class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[11] + ` </a>` : '' ) + `
-								</p>
+								<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </div> </p>
+								<div class="autor"> 
+									<div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[7] + ` </div>
+									` + ( row[11] ? ` & <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[11] + ` </div>` : '' ) + `
+								</div>
 							</div>`;
 							break;
 					}
