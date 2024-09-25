@@ -448,7 +448,7 @@
 				</div>`,
 			'identificacao-1200-5': `<div class="activity default workspace card-program">
 					<div class="local-palestra">Abaís</div>
-					<p class="title">Comunidades - Agilidade Preta</p>
+					<p class="title">Agilidade Preta: Para além da Agilidade - O futuro do trabalho e a pós modernidade</p>
 					<p class="autor"></p>
 				</div>`,
 			'identificacao-1430-1': `<div class="activity raizes card-program">
