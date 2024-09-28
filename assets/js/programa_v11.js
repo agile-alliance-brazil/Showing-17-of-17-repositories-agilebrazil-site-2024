@@ -754,7 +754,7 @@
 						case "Geral":
 							window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
 								<div class="local-palestra"> ` + row[4] + ` </div>
-								<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </div> </p>
+								<p class="title"> <div > ` + row[2] + ` </div> </p>
 							</div>`;
 							break;
 					}
