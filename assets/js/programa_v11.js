@@ -620,8 +620,8 @@
 					background-size: cover;" alt="` + dados.autor + `">
 					</div>
 					<p><b>` + dados.autor + `</b></p>
-					<p>` + dados.miniBiografia + `</p>
-					<ul class="icons">
+					<p style="text-align: justify;">` + dados.miniBiografia + `</p>
+					<ul style="margin: 0" class="icons">
 						` +  (dados.linkedin ? `<li><a href="` + dados.linkedin + `" class="icon brands fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li> ` : '') + `
 						<!-- <li><a href="{{ speaker.twitter }}" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
 						<li><a href="{{ speaker.site }}" class="icon solid fas fa-link" target="_blank"><span class="label">Website</span></a></li>
@@ -677,12 +677,14 @@
 						case "Coffee": 
 							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
 							break;
+						case "Encerramento": 
+							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
+							break;
 						case "Keynote":
 							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space keynote card-program"><div><p class="keynote-program">'+row[2]+'</p></div></div>';
 							break;
 						case "Palestra":
 						case "Workshop":
-							console.log(window.dataProgramPopup, window.dataProgram);
 							var classCss = '';
 							switch (row[3]) {
 								case "Produtos e Foco no Cliente" :
@@ -735,10 +737,15 @@
 								</div>
 							</div>`;
 							break;
+						case "Geral":
+							window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
+								<div class="local-palestra"> ` + row[4] + ` </div>
+								<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </div> </p>
+							</div>`;
+							break;
 					}
 
 				});
-				console.log(window.dataProgram, '=================');
 				window.program(30);
 				
 			},
