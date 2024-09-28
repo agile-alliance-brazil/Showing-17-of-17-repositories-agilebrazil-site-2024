@@ -681,7 +681,21 @@
 							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
 							break;
 						case "Keynote":
-							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space keynote card-program"><div><p class="keynote-program">'+row[2]+'</p></div></div>';
+							window.dataProgramPopup[row[0]][row[1]] = [
+								{
+								},
+								{
+									autor: row[7],
+									miniBiografia: row[9],
+									foto: row[8],
+									linkedin: row[10] ?? false
+								}
+							];
+							window.dataProgram[row[0]][row[1]] = `<div class="activity full-space keynote card-program">
+								<div  class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)">
+									<p class="keynote-program">`+row[2]+`</p>
+								</div>
+							</div>`;
 							break;
 						case "Palestra":
 						case "Workshop":
