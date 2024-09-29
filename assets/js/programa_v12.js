@@ -632,12 +632,12 @@
 
 		}
 		$(".backgroud-modal").show();
-		$(".backgroud-modal").animate({opacity:1},50);
+		$(".backgroud-modal").animate({opacity:1},5);
 	}
 
 	setInterval(function () {
 		$(".backgroud-modal").on( "click", function() {
-			$(".backgroud-modal").animate({opacity:0}, 50, function() {
+			$(".backgroud-modal").animate({opacity:0}, 5, function() {
 				$(".backgroud-modal").hide();
 			});
 		} );
