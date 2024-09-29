@@ -752,6 +752,7 @@
 							</div>`;
 							break;
 						case "Geral":
+						case "Pitch":
 							window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
 								<div class="local-palestra"> ` + row[4] + ` </div>
 								<p class="title"> <div > ` + row[2] + ` </div> </p>
