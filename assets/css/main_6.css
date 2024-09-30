@@ -340,6 +340,16 @@ ul.legend-trilha li {
 	color:  var(--ab-logo-azul-escuro) !important;
 }
 
+.modal-descricao-programacao {
+	max-width: 800px !important; 
+}
+
+@media screen and (max-width: 1000px) {
+	.modal-descricao-programacao {
+		max-width: 90% !important;
+	}
+}
+
 @media screen and (max-width: 1000px) {
 	table.full-screen {
 		display: none;
