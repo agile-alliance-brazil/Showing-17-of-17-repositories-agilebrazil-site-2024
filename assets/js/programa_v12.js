@@ -643,11 +643,11 @@
 		} );
 	}, 2000);
 
-	if ($("#program-30").length > 0 && window.initProgram == 0 && window.location.href.indexOf('programa-m') < 0) {
+	if ($("#program-30").length > 0 && window.initProgram == 0 && window.location.href.indexOf('programa') < 0) {
 		window.program(30);
 	}
 
-	if ($("#program-30").length > 0 && window.location.href.indexOf('programa-m') > 0) {
+	if ($("#program-30").length > 0 && window.location.href.indexOf('programa') > 0) {
 		$.ajax({
 			type: 'GET',
 			url: "https://docs.google.com/spreadsheets/d/1cHE2jOlZXy--lDFdfHFVbof7fTi8tEpLf3Iil31A_MA/gviz/tq?tqx=out:json",
