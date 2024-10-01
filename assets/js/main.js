@@ -119,7 +119,7 @@
 			});
 
 			if(window.location.href.indexOf('programa-m') < 0) {
-				setInterval(function () {
+				setTimeout(function () {
 					$(".backgroud-modal").animate({opacity:1},750);
 
 					$(".backgroud-modal").on( "click", function() {

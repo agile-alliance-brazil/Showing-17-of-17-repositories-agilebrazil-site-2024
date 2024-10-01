@@ -631,15 +631,16 @@
 			`);
 
 		}
-		$(".backgroud-modal").show();
-		$(".backgroud-modal").animate({opacity:1},5);
+		setTimeout(function () {
+			console.log('OPA OPA22222 !!!!!!!!!!');
+			$(".backgroud-modal").show();
+		}, 500);
 	}
 
-	setInterval(function () {
+	setTimeout(function () {
 		$(".backgroud-modal").on( "click", function() {
-			$(".backgroud-modal").animate({opacity:0}, 5, function() {
-				$(".backgroud-modal").hide();
-			});
+			console.log('OPA OPA !!!!!!!!!!');
+			$(".backgroud-modal").hide();
 		} );
 	}, 2000);
 
@@ -664,7 +665,6 @@
 					row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
 					rowsArray.push(rowArray);
 				});
-				console.log(rowsArray, '***********');
 
 				window.dataProgram = {};
 				window.dataProgramPopup = {};
