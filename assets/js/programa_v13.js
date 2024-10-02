@@ -631,10 +631,9 @@
 			`);
 
 		}
-		setTimeout(function () {
-			console.log('OPA OPA22222 !!!!!!!!!!');
-			$(".backgroud-modal").show();
-		}, 500);
+		console.log('OPA OPA22222 !!!!!!!!!!');
+		$(".backgroud-modal").show();
+		$(".backgroud-modal").animate({opacity:1},5);
 	}
 
 	setTimeout(function () {
