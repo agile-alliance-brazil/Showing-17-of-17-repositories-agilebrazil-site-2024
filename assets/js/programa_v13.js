@@ -592,7 +592,6 @@
 			$(".response-version-screen #"+index).html(program);
 			$(".full-screen #"+index).html(program);
 		};
-		console.log(variables);
 	}
 
 	window.popupProgram = function (day, id, posicao) {
@@ -631,14 +630,12 @@
 			`);
 
 		}
-		console.log('OPA OPA22222 !!!!!!!!!!');
 		$(".backgroud-modal").show();
 		$(".backgroud-modal").animate({opacity:1},5);
 	}
 
 	setTimeout(function () {
 		$(".backgroud-modal").on( "click", function() {
-			console.log('OPA OPA !!!!!!!!!!');
 			$(".backgroud-modal").hide();
 		} );
 	}, 2000);
@@ -650,14 +647,13 @@
 	if ($("#program-30").length > 0 && window.location.href.indexOf('programa') > 0) {
 		$.ajax({
 			type: 'GET',
-			url: "https://docs.google.com/spreadsheets/d/1cHE2jOlZXy--lDFdfHFVbof7fTi8tEpLf3Iil31A_MA/gviz/tq?tqx=out:json",
+			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php",
 			crossDomain:true,
 			success: function(responseText){
-				console.log('Successo', responseText.slice(47, -2));
 				responseJSON = JSON.parse(
 					responseText.slice(47, -2)
 				);
-				console.log(responseJSON);
+				
 				var rowsArray = [];
 				responseJSON.table.rows.forEach(function(row){
 					var rowArray = [];
@@ -766,6 +762,21 @@
 			error: function(result){
 				console.log('Error', result);
 				$("#program-intregration").html('Programação indisponivel no momento');
+			}
+		});
+	}
+
+
+	window.atulizarProgramacao = function () {
+		$.ajax({
+			type: 'GET',
+			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php?atualizar=1",
+			crossDomain:true,
+			success: function(responseText){
+				 console.log(responseText)
+			},
+			error: function(result){
+				console.log('Error', result);
 			}
 		});
 	}
