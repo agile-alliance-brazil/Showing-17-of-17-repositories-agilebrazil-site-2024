@@ -647,7 +647,7 @@
 	if ($("#program-30").length > 0 && window.location.href.indexOf('programa') > 0) {
 		$.ajax({
 			type: 'GET',
-			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php",
+			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php?atualizar=1",
 			crossDomain:true,
 			success: function(responseText){
 				responseJSON = JSON.parse(
