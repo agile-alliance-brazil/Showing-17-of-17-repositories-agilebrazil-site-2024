@@ -705,7 +705,7 @@
 								case "Futuro da Agilidade" :
 									classCss = 'futuro';
 									break;
-								case "Reaízes da Agilidade" :
+								case "Raízes da Agilidade" :
 									classCss = 'raizes';
 									break;
 								case "Métricas e Inteligência com Dados" :
