@@ -645,140 +645,135 @@
 	}
 
 	if ($("#program-30").length > 0 && window.location.href.indexOf('programa') > 0) {
-		$.ajax({
-			type: 'GET',
-			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php?atualizar=1",
-			crossDomain:true,
-			success: function(responseText){
-				responseJSON = JSON.parse(
-					responseText.slice(47, -2)
-				);
-				
-				var rowsArray = [];
-				responseJSON.table.rows.forEach(function(row){
-					var rowArray = [];
-					row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
-					rowsArray.push(rowArray);
-				});
+		window.iniciarProgramacao = function (atualizar) {
+			$.ajax({
+				type: 'GET',
+				url: "https://agileminas.com.br/chamada_agile_brazil_2024.php?atualizar="+atualizar,
+				crossDomain:true,
+				success: function(responseText){
+					responseJSON = JSON.parse(
+						responseText.slice(47, -2)
+					);
+					
+					var rowsArray = [];
+					responseJSON.table.rows.forEach(function(row){
+						var rowArray = [];
+						row.c.forEach(function(prop){ if (prop !== null) { rowArray.push(prop.v); } else {rowArray.push(null);} });
+						rowsArray.push(rowArray);
+					});
 
-				window.dataProgram = {};
-				window.dataProgramPopup = {};
-				rowsArray.forEach(function(row){
-					if (window.dataProgram[row[0]] === undefined) {
-						window.dataProgram[row[0]] = [];
-						window.dataProgramPopup[row[0]] = [];
-					} 
-					switch(row[5]) {
-						case "Coffee": 
-							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
-							break;
-						case "Encerramento": 
-							window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
-							break;
-						case "Keynote":
-							window.dataProgramPopup[row[0]][row[1]] = [
-								{
-								},
-								{
-									autor: row[7],
-									miniBiografia: row[9],
-									foto: row[8],
-									linkedin: row[10] ?? false
-								}
-							];
-							window.dataProgram[row[0]][row[1]] = `<div class="activity full-space keynote card-program">
-								<div  class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)">
-									<p class="keynote-program">`+row[2]+`</p>
-								</div>
-							</div>`;
-							break;
-						case "Palestra":
-						case "Workshop":
-							var classCss = '';
-							switch (row[3]) {
-								case "Produtos e Foco no Cliente" :
-									classCss = 'cliente';
-									break;
-								case "Liderança e Agilidade Estratégica" :
-									classCss = 'lideranca';
-									break;
-								case "Futuro da Agilidade" :
-									classCss = 'futuro';
-									break;
-								case "Raízes da Agilidade" :
-									classCss = 'raizes';
-									break;
-								case "Métricas e Inteligência com Dados" :
-									classCss = 'metrica';
-									break;
-
-							}
-							window.dataProgramPopup[row[0]][row[1]] = [
-								{
-									title: row[2],
-									trilha: row[3],
-									descricao: row[6]
-								},
-								{
-									autor: row[7],
-									miniBiografia: row[9],
-									foto: row[8],
-									linkedin: row[10] ?? false
-								}
-							];
-							if (row[11]) {
-								window.dataProgramPopup[row[0]][row[1]].push(
+					window.dataProgram = {};
+					window.dataProgramPopup = {};
+					rowsArray.forEach(function(row){
+						if (window.dataProgram[row[0]] === undefined) {
+							window.dataProgram[row[0]] = [];
+							window.dataProgramPopup[row[0]] = [];
+						} 
+						switch(row[5]) {
+							case "Coffee": 
+								window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
+								break;
+							case "Encerramento": 
+								window.dataProgram[row[0]][row[1]] = '<div class="activity full-space card-program">'+row[2]+'</div>';
+								break;
+							case "Keynote":
+								window.dataProgramPopup[row[0]][row[1]] = [
 									{
-										autor: row[11],
-										miniBiografia: row[13],
-										foto: row[12],
-										linkedin: row[14] ?? false
+									},
+									{
+										autor: row[7],
+										miniBiografia: row[9],
+										foto: row[8],
+										linkedin: row[10] ?? false
 									}
-								);
-							}
-							window.dataProgram[row[0]][row[1]] = `<div class="activity ` + classCss + ` card-program">
-								<p class="hashtag-trilha"> ` + row[3] + ` </p>
-								<div class="local-palestra"> ` + row[4] + ` </div>
-								<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </div> </p>
-								<div class="autor"> 
-									<div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[7] + ` </div>
-									` + ( row[11] ? ` & <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[11] + ` </div>` : '' ) + `
-								</div>
-							</div>`;
-							break;
-						case "Geral":
-						case "Pitch":
-							window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
-								<div class="local-palestra"> ` + row[4] + ` </div>
-								<p class="title"> <div > ` + row[2] + ` </div> </p>
-							</div>`;
-							break;
-					}
+								];
+								window.dataProgram[row[0]][row[1]] = `<div class="activity full-space keynote card-program">
+									<div  class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)">
+										<p class="keynote-program">`+row[2]+`</p>
+									</div>
+								</div>`;
+								break;
+							case "Palestra":
+							case "Workshop":
+								var classCss = '';
+								switch (row[3]) {
+									case "Produtos e Foco no Cliente" :
+										classCss = 'cliente';
+										break;
+									case "Liderança e Agilidade Estratégica" :
+										classCss = 'lideranca';
+										break;
+									case "Futuro da Agilidade" :
+										classCss = 'futuro';
+										break;
+									case "Raízes da Agilidade" :
+										classCss = 'raizes';
+										break;
+									case "Métricas e Inteligência com Dados" :
+										classCss = 'metrica';
+										break;
 
-				});
-				window.program(30);
-				
-			},
-			error: function(result){
-				console.log('Error', result);
-				$("#program-intregration").html('Programação indisponivel no momento');
-			}
-		});
+								}
+								window.dataProgramPopup[row[0]][row[1]] = [
+									{
+										title: row[2],
+										trilha: row[3],
+										descricao: row[6]
+									},
+									{
+										autor: row[7],
+										miniBiografia: row[9],
+										foto: row[8],
+										linkedin: row[10] ?? false
+									}
+								];
+								if (row[11]) {
+									window.dataProgramPopup[row[0]][row[1]].push(
+										{
+											autor: row[11],
+											miniBiografia: row[13],
+											foto: row[12],
+											linkedin: row[14] ?? false
+										}
+									);
+								}
+								window.dataProgram[row[0]][row[1]] = `<div class="activity ` + classCss + ` card-program">
+									<p class="hashtag-trilha"> ` + row[3] + ` </p>
+									<div class="local-palestra"> ` + row[4] + ` </div>
+									<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[2] + ` </div> </p>
+									<div class="autor"> 
+										<div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[7] + ` </div>
+										` + ( row[11] ? ` & <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[11] + ` </div>` : '' ) + `
+									</div>
+								</div>`;
+								break;
+							case "Geral":
+							case "Pitch":
+								window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
+									<div class="local-palestra"> ` + row[4] + ` </div>
+									<p class="title"> <div > ` + row[2] + ` </div> </p>
+								</div>`;
+								break;
+						}
+
+					});
+					window.program(30);
+					$("#loading-atualizar").css('display', 'none');
+					
+				},
+				error: function(result){
+					console.log('Error', result);
+					$("#program-intregration").html('Programação indisponivel no momento');
+				}
+			});
+		}
+		window.iniciarProgramacao(0);
 	}
 
 
 	window.atulizarProgramacao = function () {
-		$.ajax({
-			type: 'GET',
-			url: "https://agileminas.com.br/chamada_agile_brazil_2024.php?atualizar=1",
-			crossDomain:true,
-			success: function(responseText){
-				 console.log(responseText)
-			},
-			error: function(result){
-				console.log('Error', result);
-			}
-		});
+		$("#loading-atualizar").css('display', 'inline');
+		window.iniciarProgramacao(1);
 	}
 
 })(jQuery);
