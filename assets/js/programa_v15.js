@@ -767,7 +767,7 @@
 				}
 			});
 		}
-		window.iniciarProgramacao(1);
+		window.iniciarProgramacao(0);
 	}
 
 
