@@ -221,7 +221,7 @@
 			}
 		});
 	}
-	window.iniciarProgramacao(0);
+	window.iniciarProgramacao(1);
 	
 
 
