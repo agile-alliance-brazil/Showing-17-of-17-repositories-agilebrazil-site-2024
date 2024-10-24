@@ -4938,7 +4938,7 @@ input, select, textarea {
 		margin-bottom: 0.5em;
 	}
 	
-	#footer .apoio:not(.comunidade),
+	#footer .apoio:not(.comunidade):not(.sponsorsInLevel),
 	#footer .social {
 		border-left: var(--ab-divisores) solid 1px;
 		padding-left: 2em;
