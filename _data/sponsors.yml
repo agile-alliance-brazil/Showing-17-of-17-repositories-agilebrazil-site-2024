@@ -28,6 +28,11 @@
   url: https://www.bain.com/pt-br/
   level: bronze
 
+- name: Perto
+  logo: /assets/images/sponsors/Logo_Perto_Original.png
+  url: https://perto.network/
+  level: apoio
+
 #- name: Wildtech
 #  logo: /assets/images/sponsors/sponsor-wildtech.png
 #  url: https://www.wildtech.com.br/
