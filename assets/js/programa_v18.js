@@ -203,10 +203,44 @@
 							break;
 						case "Geral":
 						case "Pitch":
-							window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
-								<div class="local-palestra"> ` + row[5] + ` </div>
-								<p class="title"> <div > ` + row[3] + ` </div> </p>
-							</div>`;
+							if (row[10]){
+								window.dataProgramPopup[row[0]][row[1]] = [
+									{
+										title: row[3],
+										trilha: row[4],
+										descricao: row[7]
+									},
+									{
+										autor: row[8],
+										miniBiografia: row[10],
+										foto: row[9],
+										linkedin: row[11] ?? false
+									}
+								];
+								if (row[12]) {
+									window.dataProgramPopup[row[0]][row[1]].push(
+										{
+											autor: row[12],
+											miniBiografia: row[14],
+											foto: row[13],
+											linkedin: row[15] ?? false
+										}
+									);
+								}
+								window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
+									<div class="local-palestra"> ` + row[5] + ` </div>
+									<p class="title"> <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 1)"> ` + row[3] + ` </div> </p>
+									<div class="autor"> 
+										<div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 2)"> ` + row[8] + ` </div>
+										` + ( row[12] ? ` & <div class="text-clicavel" onclick="popupProgram('` + row[0] + `', '` + row[1] + `', 3)"> ` + row[12] + ` </div>` : '' ) + `
+									</div>
+								</div>`;
+							} else {
+								window.dataProgram[row[0]][row[1]] = `<div class="activity default card-program">
+									<div class="local-palestra"> ` + row[5] + ` </div>
+									<p class="title"> <div > ` + row[3] + ` </div> </p>
+								</div>`;
+							}
 							break;
 					}
 
