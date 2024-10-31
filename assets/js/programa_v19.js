@@ -16,6 +16,12 @@
 		$("#estrutura-"+day).css('display', 'block');
 		$("#program-"+day).css('background-color', '#147332');
 		var variables = [];
+		if (day == 31) {
+			$("#identificacao-1640-0").css('display', 'none');
+			$("#identificacao-1640").css('display', 'none');
+			$("#identificacao-1730-0").css('display', 'none');
+			$("#identificacao-1730").css('display', 'none');
+		}
 		for (var index in dataProgram[day]) {
 			var program = dataProgram[day][index];
 			variables += `
