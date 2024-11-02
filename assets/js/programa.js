@@ -94,7 +94,7 @@
 	window.iniciarProgramacao = function (atualizar) {
 		$.ajax({
 			type: 'GET',
-			url: "https://agileminas.com.br/chamada_agile_brazil_2024_v2.php?atualizar="+atualizar,
+			url: "https://docs.google.com/spreadsheets/d/1P1qYsxAniUVvVpS40mO271Oa3WO_GvMqYwcoSsXcmtM/gviz/tq?tqx=out:json",
 			// url: 'https://docs.google.com/spreadsheets/d/1P1qYsxAniUVvVpS40mO271Oa3WO_GvMqYwcoSsXcmtM/gviz/tq?tqx=out:json',
 			crossDomain:true,
 			success: function(responseText){
