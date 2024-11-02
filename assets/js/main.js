@@ -118,7 +118,7 @@
 				side: 'right'
 			});
 
-			if(window.location.href.indexOf('programa-m') < 0) {
+			/*if(window.location.href.indexOf('programa-m') < 0) {
 				setTimeout(function () {
 					$(".backgroud-modal").animate({opacity:1},750);
 
@@ -128,7 +128,7 @@
 						});
 					} );
 				}, 2000);
-			}
+			}*/
 
 
 })(jQuery);
